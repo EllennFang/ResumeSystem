@@ -1,9 +1,11 @@
+- 当前为未调试版本
+- ui包下为前端代码
 - 该目录下为后台代码
 - 若用idea开发，记得忽略 `.idea`以及`iml`等配置文件，防止对其他成员的idea配置产生影响
 - 前端代码请提交在`ResumeSystem-ui`目录下
 - 提供的mysql 8数据库：
-    - url：jdbc:mysql://49.234.194.218:3309/resume?serverTimezone=UTC&characterEncoding=utf-8
-    - password：Cfsqq789.
+    - url：jdbc:mysql://119.23.149.30:3306/resume?serverTimezone=UTC&characterEncoding=utf-8
+      - password：询问版主
 - 提供的redis
-    - ip：49.234.194.218:6379
-    - password：Cfsqq789.
+    - ip：119.23.149.30:6379
+    - password：询问版主.
