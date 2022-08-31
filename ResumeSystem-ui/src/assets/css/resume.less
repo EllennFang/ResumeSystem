@@ -1,0 +1,316 @@
+// @background: #2b4b6b;
+@logo-width: 130px;
+@logo-height: 130px;
+@line-height: 34px;
+// @font-color: #5183ff;
+@font-color: #409eff;
+.body-bg {
+  overflow: hidden;
+}
+
+.body-bg:after {
+  content: "";
+  background: url(../images/bg.png) center center no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: fixed; // position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.resume-container {
+  position: relative;
+  height: 100%;
+  z-index: 999;
+}
+
+.resume-box {
+  position: relative;
+  width: 880px;
+  margin: @logo-height auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.96; // filter: alpha(style=1, opacity=0, finishopacity=100, startx=0, starty=0, finishx=200, finishy=200);
+  .avatar-box {
+    width: @logo-width;
+    height: @logo-height;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 10px #ddd;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 999;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #eee;
+    }
+  }
+  .title-box {
+    padding-top: @logo-height / 1.5;
+    padding-bottom: 10px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.resume-form {
+  // bottom: 0;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  .form-item-err {
+    font-size: 12px;
+    color: #fe6157;
+    padding-left: 21px;
+    background: url(../images/warm.png) no-repeat;
+    background-size: 14px;
+    background-position: 0;
+    line-height: 14px;
+    margin-top: 4px;
+  } //修改<el-form-item>的样式
+  /deep/ .el-form-item {
+    margin-bottom: 0;
+  } // 编辑按钮样式
+  .edit-resume-btn {
+    margin-left: 14px;
+    background: url(../images/edit.png) no-repeat;
+    background-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    color: @font-color;
+    cursor: pointer;
+  }
+  .code-img-btn {
+    // display: inline-block;
+    // margin-top: 10px;
+    // vertical-align: middle;
+    // height: 40px;
+    img {
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    span {
+      padding-left: 10px;
+    }
+  } //提交区域的样式
+  .row-submit {
+    margin-top: 50px; //提交按钮
+    .submit-resume-btn {
+      // margin-top: 30px;
+      width: 140px;
+    }
+  } //验证码文本样式
+  .code-key-text {
+    height: 40px;
+    line-height: 40px;
+  } //Element验证样式
+  /deep/ .el-form-item__error {
+    font-size: 12px;
+    color: #fe6157;
+    padding-left: 21px;
+    background: url(../images/warm.png) no-repeat;
+    background-size: 14px;
+    background-position: 0 4px;
+    line-height: 14px; // margin-top: 4px;
+  } //右侧区域样式
+  .right-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: 450px;
+    min-width: 300px;
+    opacity: 0.96;
+    //上传的文件名称样式
+    .upload-file-name {
+      padding-top: 10px;
+      font-size: 14px;
+    }
+  } //右侧区域子盒子样式
+  .right-box-children {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    .el-button {
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// 输入框左侧文字样式
+.text-content {
+  border-radius: 4px; // min-height: 36px;
+  line-height: @line-height;
+  text-align: right;
+}
+
+// 输入框样式
+.input-conten {
+  border-radius: 4px;
+  min-height: 36px;
+  line-height: @line-height - 2;
+}
+
+// Layout布局通用样式
+.el-row {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.el-col {
+  border-radius: 4px;
+}
+
+// 必填*样式
+.require {
+  vertical-align: middle;
+  color: fe6157;
+  font-style: 20px;
+  margin-right: 7px;
+}
+
+// 按钮位置
+.save-resume-btn,
+.cancel-resume-btn,
+.del-resume-btn {
+  margin-top: 10px;
+}
+
+.save-resume-btn {
+  margin-right: 16px;
+}
+
+// 添加按钮样式
+.add-resume-btn {
+  margin-top: 30px;
+  padding-left: 22px;
+  background: url(../images/add.png) no-repeat;
+  background-size: 15px;
+  line-height: 15px;
+  font-size: 14px;
+  color: @font-color;
+  cursor: pointer;
+}
+
+//简历凭证码弹窗样式
+.el-dialog-tip h3 {
+  text-align: center;
+  font-size: 18px;
+  color: #5183ff;
+}
+
+/deep/ .el-checkbox-group label span {
+  padding: 12px 20px;
+}
+
+@media screen and (max-width:880px) {
+  .body-bg:after {
+    background: none;
+  }
+  .resume-box {
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    .avatar-box {
+      display: inline-block;
+      position: absolute; // left: 0;
+      // transform: none; 
+      transform: translate(-50%);
+      opacity: 0.3;
+    }
+    .title-box {
+      padding-top: 38px;
+      h1 {
+        margin-top: 0;
+      }
+    }
+    .right-box {
+      position: static;
+      margin-left: 0;
+    }
+  }
+  .resume-box .resume-form {
+    br {
+      display: none;
+    }
+    .el-row {
+      display: flex;
+      flex-direction: column;
+      .el-col-offset-1,
+      .el-col-offset-3 {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+      &>div {
+        width: 100%;
+        .text-content {
+          text-align: left;
+        }
+      }
+    }
+    .el-select {
+      width: 100% !important;
+    }
+    .code-img-btn {
+      margin-top: 10px;
+    }
+    .row-submit {
+      margin-top: 10px;
+      .el-button {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    .right-box {
+      min-width: 0;
+      .right-box-children {
+        box-shadow: none;
+        padding: 0;
+        margin: 0 auto;
+      }
+      .right-box-search-resume {
+        margin-bottom: 20px;
+        .el-row {
+          // align-items: center;
+          justify-content: center;
+          padding: 0 3px;
+        }
+      }
+      .right-box-file {
+        padding-bottom: 20px;
+        button {
+          // width: 35%;
+          padding: 13px 25px;
+        }
+      }
+    }
+  }
+  /deep/ .el-checkbox-group label span {
+    // padding: 10px 10px;
+    margin: 4px;
+    border: 1px solid #DCDFE6;
+    border-radius: 4px !important;
+  }
+  // /deep/ .el-radio-group label span {
+  //   padding: 10px 20px;
+  // }
+}

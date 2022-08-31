@@ -1,0 +1,67 @@
+.manager-login {
+  height: 100%; // background-color: var(--themeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  background-color: #fff; // border: 1px solid var(--themeColor);
+  border-radius: 10px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  .title {
+    margin: 18px 0;
+    font-size: 28px;
+    text-align: center;
+    font-weight: normal;
+    .m-home-back {
+      display: none;
+    }
+  }
+  .home-back a {
+    color: #02a7de;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .login {
+    padding: 20px;
+    .code-item {
+      // margin: 30px 0;
+      margin-bottom: 30px;
+      .code-key {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .code-img {
+          // flex: 7;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            cursor: pointer;
+          }
+          a {
+            color: #409eff;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .form-button {
+      margin-top: 10px;
+      // display: flex;
+      // justify-content: space-between;
+      text-align: center;
+
+      .el-button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/deep/ .el-form-item__label {
+  text-align: left;
+}

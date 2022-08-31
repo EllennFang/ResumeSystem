@@ -1,0 +1,68 @@
+/* 全局样式表 */
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px; // background: #2b4b6b;
+  --themeColor: #a5c6e6;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  font-style: normal;
+}
+
+.el-popover {
+  width: auto !important;
+  box-shadow: rgba(0, 0, 0, 12%) 0px 0px 40px 20px;
+  .popover-more-info {
+    display: flex;
+    .popover-left {
+      // flex: 3;
+      display: flex;
+      align-items: center;
+      .qrcode-left img {
+        width: 300px;
+        height: 300px;
+      }
+      .qrcode-right {
+        display: flex;
+        flex-direction: column;
+      }
+      .qrcode-right img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+    .popover-right {
+      // flex: 2;
+      ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 40px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1400px) {
+  .el-dialog {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width:880px) {
+  .el-dialog {
+    width: 80% !important;
+  }
+}
