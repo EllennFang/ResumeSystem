@@ -1,7 +1,10 @@
 server:
   port: 10012
+  address: 192.168.1.115
 
 mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: edu.dyw.resume.entity
   global-config:
@@ -22,6 +25,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -44,4 +48,4 @@ spring:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
 #文件的保存路径
-filePath: /home/uploadFile/
+filePath: E:/ResumeSystem-master/uploadFile/

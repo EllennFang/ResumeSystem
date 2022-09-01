@@ -9,9 +9,11 @@
 import axios from 'axios'
 import { Message } from "element-ui"
 
+const BASEURL = "http://192.168.1.115:10012"
+
 // 对admin的请求
 const requestAdmin = axios.create({
-  baseURL: 'http://8.129.163.145:10012/admin',
+  baseURL: BASEURL + '/admin',
   timeout: 5000,
 })
 
@@ -48,7 +50,7 @@ export { requestAdmin }
 
 // 对stu的请求
 export const requestStudent = axios.create({
-  baseURL: 'http://8.129.163.145:10012/stu',
+  baseURL: BASEURL + '/stu',
   timeout: 5000,
 })
 
