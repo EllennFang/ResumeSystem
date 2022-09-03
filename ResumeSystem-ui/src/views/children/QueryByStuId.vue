@@ -8,7 +8,7 @@
         v-model.trim="searchByStuIdValue"
         @input="searchChange"
         @keyup.enter.native="searchResumeByStuId"
-        placeholder="请输入学号（需输入完整学号）"
+        placeholder="请输入学号"
         clearable
       >
         <!-- 确认按钮 -->

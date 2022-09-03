@@ -8,7 +8,7 @@
         v-model.trim="searchByNameValue"
         @input="searchChange"
         @keyup.enter.native="searchResumeByName"
-        placeholder="请输入姓名（需输入完整姓名）"
+        placeholder="请输入姓名"
         clearable
       >
         <!-- 确认按钮 -->

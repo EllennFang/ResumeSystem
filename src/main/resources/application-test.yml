@@ -27,7 +27,7 @@ spring:
     username: root
     password: 123456
     #最新版本的mysql的url需要指定时区
-    url: jdbc:mysql://localhost:3306/resume?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://119.23.149.30:3306/resume?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
   thymeleaf:
     cache: false
     encoding: UTF-8
@@ -44,4 +44,4 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
 #文件的保存路径
 #filePath: C:\\chenjimiao\\upload\\
-filePath: D:\\fileUpload\\
+filePath: E:/ResumeSystem-master/uploadFile/

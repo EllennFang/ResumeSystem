@@ -1,5 +1,6 @@
 package edu.dyw.resume.controller;
 
+import com.alibaba.druid.util.StringUtils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
@@ -121,7 +122,9 @@ public class AdminController {
         if (name!=null){
             Page<User> userPage = new Page<>(page,10);
             QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
-            userQueryWrapper.eq("name",name);
+//            userQueryWrapper.eq("name",name);
+            // 模糊查询
+            userQueryWrapper.like(true, "name", name);
             IPage<User> result = userMapper.selectPage(userPage, userQueryWrapper);
             map.put("state",true);
             map.put("msg","查询成功");
@@ -148,7 +151,8 @@ public class AdminController {
         if (stuId!=null){
             Page<User> userPage = new Page<>(page,10);
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("studentId",stuId);
+//            queryWrapper.eq("studentId",stuId);
+            queryWrapper.like(true, "studentId", stuId);
             Page<User> result = userMapper.selectPage(userPage, queryWrapper);
             map.put("state",true);
             map.put("msg","查询成功");

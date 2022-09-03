@@ -110,12 +110,22 @@ public class StudentController {
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         String resumeId = resumeBody.getResumeId();
-        queryWrapper.eq("resumeId",resumeId);
+        String name = resumeBody.getName();
+        String studentId = resumeBody.getStudentId();
+        queryWrapper
+                .eq("name", name)
+                .eq("studentId", studentId);
 
-        //根据resumeId获取之前保存的简历对象
+        //根据 学号 和 姓名 获取之前保存的简历对象
         User userDB = userMapper.selectOne(queryWrapper);
 
-        if(resumeId!=null&&!resumeId.isEmpty()&&userDB !=null){//简历之前已经存在,则替换原有的简历信息
+        // 当学号和名字都一样存在于库中时，表示简历已经存在
+        if (userDB !=null){//简历之前已经存在,则替换原有的简历信息
+
+            // 不管浏览器缓存中的凭证 resumeId 是否还在，我们都把原来的凭证放回来防止浏览器刷新凭证丢失的情况
+            resumeBody.setResumeId(userDB.getResumeId());
+            resumeId = resumeBody.getResumeId();
+
             System.out.println("修改简历：resumeId="+resumeId);
             //修改文件信息
             if(!file.isEmpty()){
@@ -143,6 +153,10 @@ public class StudentController {
 
             map.put("state",result.isState());
             map.put("msg",result.getMsg());
+
+            if(result.isState()){
+                map.put("resumeId",resumeId);
+            }
         }else{
             //保存新的简历
             map = saveResume(resumeBody,file);
@@ -261,6 +275,7 @@ public class StudentController {
         if(result.isState()){
             map.put("resumeId",resumeId);
         }
+
 
         return map;
     }
