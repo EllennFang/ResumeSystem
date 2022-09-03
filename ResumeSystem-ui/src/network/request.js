@@ -9,6 +9,8 @@
 import axios from 'axios'
 import { Message } from "element-ui"
 
+// 远程服务 "http://119.23.149.30:10012"
+// 本地ip "http://192.168.1.115:10012"
 const BASEURL = "http://192.168.1.115:10012"
 
 // 对admin的请求

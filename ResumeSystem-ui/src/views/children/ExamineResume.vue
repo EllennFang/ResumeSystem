@@ -317,7 +317,7 @@ export default {
       let link = document.createElement("a");
       link.style.display = "none";
       link.href =
-        "http://8.129.163.145:10012/stu/download?resumeId=" + resumeId;
+        "http://192.168.1.115:10012/stu/download?resumeId=" + resumeId;
       document.body.appendChild(link);
       link.click();
     },

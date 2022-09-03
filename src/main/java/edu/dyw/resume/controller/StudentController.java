@@ -131,8 +131,10 @@ public class StudentController {
             if(!file.isEmpty()){
                 //删除原来保存在服务器文件
                 String path = userDB.getPath();
-                File oldFile = new File(path);
-                oldFile.delete();
+                if (path != null) {
+                    File oldFile = new File(path);
+                    oldFile.delete();
+                }
                 //保存新文件
                 Map<String, Object> fileMap = savaFile(file);
                 if (!(Boolean) fileMap.get("state")){
